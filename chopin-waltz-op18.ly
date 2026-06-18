@@ -13,10 +13,10 @@ upper = \relative c'' {
   \time 3/4
   \tempo "Vivo"
 
-  bf2->-1\p bf8-.-3\<[ bf-.-2] | %m1
+  bf2->-1\<-\parenthesize \p bf8-.-3[ bf-.-2] | %m1
   bf2->-1 bf8-.[ bf-.] |
   bf4-> bf8-.[ bf-.] bf4-> |
-  bf8-.[ bf-.] bf4-> bf8-.[ bf-.] \bar ".|:"
+  bf8-.[ bf-.] bf4-> bf8-.[ bf-.\!] \bar ".|:"
   bf4-.-1\f d8-2\<( ef <d f>4\! |
   bf-.\<) ef8-2( f <ef g>4\! |
   bf4\<) f'8-2( g <f af>4\!) | %m7
@@ -59,7 +59,7 @@ lower = \relative c {
 }
 
 \score {
-  \new PianoStaff \with { instrumentName = "" }
+  \new PianoStaff \with { instrumentName = \markup { \bold \fontsize #3 "1." } }
   <<
     \new Staff = "upper" \upper
     \new Staff = "lower" \lower
