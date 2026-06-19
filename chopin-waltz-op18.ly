@@ -1,4 +1,4 @@
-\version "2.23.82"
+\version "2.22.2"
 \language "english"
 
 \header {
@@ -48,9 +48,9 @@ upper = \relative c'' {
       {
         \mergeDifferentlyHeadedOn
         \stemDown
-        df8->-1( bf'-4 c bf af4-.-3) |
+        df8->-1\>( bf'-4 c bf af4-.-3) |
         cf,8-> af'-4 bf af g4-.-3 |
-        bf,8->( g'-4 af g f4-.) |
+        bf,8->( g'-4 af g f4-.\!) |
       }
       \\
       {
@@ -59,12 +59,12 @@ upper = \relative c'' {
         \stemUp bf2 \stemDown af4 |
       }
     >>
-    \alternative {
-      \volta 1 { <g ef'>4-! bf8-3-. bf-2-. bf-1-. bf-2-. }
-      \volta 2 { <g ef'>4-! ef8-4-. ef-3-. ef-2-. ef-1-. }
     }
+  \alternative {
+    { <g ef'>4-! bf8-3-. bf-2-. bf-1-. bf-2-. | }
+    { <g ef'>4-! ef'8-4-. ef-3-. ef-2-. ef-1-. | }
   }
-
+  ef-3-.\p\<^\markup { \italic "leggiermente" } ef-.-2 ef-.-1 ef-.-3 ef-. ef-.\! |
   
 
 
@@ -104,6 +104,11 @@ lower = \relative c {
   bf-. <g' ef'> <g ef'> |
   bf,-. <f' d'> <bf d> |
   <ef, bf' ef> r r |
+  <<
+    { r <g ef'>( <g df'>) }
+    \\
+    { ef2 ef4 }
+  >>
 
 
 }
