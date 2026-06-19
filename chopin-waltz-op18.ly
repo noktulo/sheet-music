@@ -1,3 +1,4 @@
+\version "2.23.82"
 \language "english"
 
 \header {
@@ -18,40 +19,55 @@ upper = \relative c'' {
   bf2-^-1\f bf8-.-3[ bf-.-2] | %m1
   bf2-^-1 bf8-.[ bf-.] |
   bf4-^ bf8-.[ bf-.] bf4-^ |
-  bf8-.[ bf-.] bf4-^ bf8-.[ bf-.] \bar ".|:"
-  bf4-.-1-\parenthesize \f d8-2\<( ef <d f>4 |
-  bf-.) ef8-2( f <ef g>4 |
-  bf4-.) f'8-2( g <f af>4\!) | %m7
-  <df g bf>2-5\sf <df g bf>8-4-. <df g bf>-. |
-  <<
-    {
-      bf'4->-4\p( c8 bf af4-3-.) |
-      af-4->\>( bf8 af g4)-. |
-      g-4->( af8 g f4-.) |
-      f-4->( g8 f ef4-.)\! |
-    }
-   \\
-    {
-      <df g>2 c4 |
-      cf2 bf4 |
-      bf2 af4 |
-      af2 g4 |
-    }
-  >>
-  bf-.-1\f d8-2( ef <d f>4 |
-  bf4-.)\< ef8-2( f <ef g>4 |
-  bf4-.) f'8-2( g <f af>4) | 
-  <df g bf>4.\sf <g bf>8-4( df <g bf>) |
-  <<
-    {
-      \mergeDifferentlyHeadedOn
-      df2 c4
-    }
+  bf8-.[ bf-.] bf4-^ bf8-.[ bf-.] |
+  \repeat volta 2 {
+    bf4-.-1-\parenthesize \f d8-2\<( ef <d f>4 |
+    bf-.) ef8-2( f <ef g>4 |
+    bf4-.) f'8-2( g <f af>4\!) | %m7
+    <df g bf>2-5\sf <df g bf>8-4-. <df g bf>-. |
+    <<
+      {
+        bf'4->-4\p( c8 bf af4-3-.) |
+        af-4->\>( bf8 af g4)-. |
+        g-4->( af8 g f4-.) |
+        f-4->( g8 f ef4-.)\! |
+      }
     \\
-    {
-      df8-1->( bf'-4 c bf <c, af'>4-.-3) |
+      {
+        <df g>2 c4 |
+        cf2 bf4 |
+        bf2 af4 |
+        af2 g4 |
+      }
+    >>
+    bf-.-1\f d8-2( ef <d f>4 |
+    bf4-.)\< ef8-2( f <ef g>4 |
+    bf4-.) f'8-2( g <f af>4) | 
+    <df g bf>4.\sf <g bf>8-4( df <g bf>) |
+    <<
+      {
+        \mergeDifferentlyHeadedOn
+        \stemDown
+        df8->-1( bf'-4 c bf af4-.-3) |
+        cf,8-> af'-4 bf af g4-.-3 |
+        bf,8->( g'-4 af g f4-.) |
+      }
+      \\
+      {
+        \stemUp df2 \stemDown c4  | 
+        \stemUp cf2 \stemDown bf4 |
+        \stemUp bf2 \stemDown af4 |
+      }
+    >>
+    \alternative {
+      \volta 1 { <g ef'>4-! bf8-3-. bf-2-. bf-1-. bf-2-. }
+      \volta 2 { <g ef'>4-! ef8-4-. ef-3-. ef-2-. ef-1-. }
     }
-  >>
+  }
+
+  
+
+
 }
 
 lower = \relative c {
